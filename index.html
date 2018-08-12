@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task list</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <h1>Task list</h1>
+    <header class="input-wrapper">
+        <div class="input-img"></div>
+        <label>
+            <input id="input-field" type="text" placeholder="enter task" required>
+        </label>
+        <button id="btn-add">add</button>
+    </header>
+    <main class="tasks-wrapper">
+        <ol id="todoList"></ol>
+    </main>
+    <footer>
+        <label>
+            <input id="checkboxHideItem" type="checkbox">
+            <span>Hide all completed tasks</span>
+        </label>
+        <button id="btnDelAllCompleted">delete all completed tasks</button>
+        <button id="btnDelAll">delete all tasks</button>
+    </footer>
+</div>
+<script src="js.js"></script>
+</body>
+</html>
