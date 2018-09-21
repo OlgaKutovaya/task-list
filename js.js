@@ -27,6 +27,9 @@ $todoList.addEventListener('click', function (event) {
         var $span = event.target.parentElement.querySelector('span');
         if (event.target.checked) {
             $span.classList.add('task-done');
+            if ($hideItemsCheckbox.checked) {
+                $span.parentElement.parentElement.classList.add('hide-item');
+            }
         } else {
             $span.classList.remove('task-done');
         }
