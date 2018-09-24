@@ -38,19 +38,16 @@ $todoList.addEventListener('click', function (event) {
 
 $hideItemsCheckbox.addEventListener('click', function () {
     var $hiddenItems = $todoList.querySelectorAll('li > label > input:checked');
-    var operation = this.checked ? addClass : removeClass;
+    var hide = this.checked;
     $hiddenItems.forEach(function (item) {
-        operation(item.parentElement.parentElement, 'hide-item');
-    });
+        var classList = item.parentElement.parentElement.classList;
+        if (hide) {
+            classList.add('hide-item');
+        } else {
+            classList.remove('hide-item');
+        }
+     });
 });
-
-function addClass($element, className) {
-    $element.classList.add(className);
-}
-
-function removeClass($element, className) {
-    $element.classList.remove(className);
-}
 
 $btnDelAllCompleted.addEventListener('click', function () {
     var $hiddenItems = $todoList.querySelectorAll('li > label > input:checked');
@@ -101,4 +98,3 @@ function createSpan(value) {
     $span.textContent = value;
     return $span;
 }
-
